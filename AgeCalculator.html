@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Age Calculator</title>
+</head>
+<body = style="font-family: Helvetica, sans serif; color: blue; font-size: 14px">
+
+	<h1>Age Calculator</h1>
+
+	<h2>How old are you this year?</h2>
+	<hr>
+
+	<p>Click the button to help you remember your age.</p>
+	
+	<button onclick="calculate()">Calculate</button>
+
+	<p id=B03></p>
+	<p id=BE031></p>
+	<p id=BE032></p>
+
+	<script type="text/javascript">
+
+	function calculate() {
+
+		function thisYear() {
+			var d = new Date();
+			var n = d.getFullYear();
+	//		var text = "We are in the year  " + n + ".";
+	//		document.getElementById("BE03").innerHTML = text;
+
+			var birth = prompt("Please enter your year of birth");
+			var birthNum = Number(birth);
+
+			document.getElementById("BE031").innerHTML = ("You were born in " + birthNum);
+
+			function age(n, birthNum) {
+			return (n - birthNum);
+			}
+
+			function age_1(n, birthNum) {
+				return (n - birthNum - 1);
+			}
+
+			document.getElementById("BE032").innerHTML = ("You will start this year being " + age_1(n, birthNum) + " years old and you will be " + age(n, birthNum) + " at the end of this year.");
+		}
+
+		thisYear();
+	}
+	calculate()
+	</script>
+	
+</body>
+</html>
